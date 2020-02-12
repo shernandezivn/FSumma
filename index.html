@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>Financiera Summa</title>
 </head>
 <body>
 
 <!-- MENU RESONSIVO BOOTSTRAP-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#" id="but1">
   	<img border="0" hspace="0" alt="Logo" src="http://www.summa.com.gt/templates/der_web/images/logo2.png" align="middle">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,10 +22,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="#">Calculadora Factorajes</a>
+        <a class="nav-link" href="#" id="but2">Calculadora Factorajes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Calculadora Inversiones</a>
+        <a class="nav-link" href="#" id="but3">Calculadora Inversiones</a>
       </li>
       <li class="nav-item">
       <!-- Button modal -->
@@ -38,12 +39,50 @@
 
 
 <content>
-<div class="container p-3">
+<!--CONTENIDO INICIO-->
+<div class="container p-3" id="cont_1">
 	<img style="width: 100%; height: auto;" alt="imagenSumma" src="https://eportal.summa.com.gt\Controls\Promo.jpg">
 	<div align="center">
 		<a style=" font-size: 0.5em;cursor: pointer; text-decoration: none; color: #000000; padding: 0px 0px 0px 0px; text-align: center; font: bold 7px verdana,sans-serif;" href="https://www.symantec.com/es/es/ssl-certificates" target="_blank">ACERCA DE LOS CERTIFICADOS SSL
 		</a>
 	</div>
+</div>
+
+<!--CONTENIDO CALCULADORA FACTORES-->
+<div class="container p-3" id="cont_2" style="display: none;">
+	<form class="needs-validation was-validated" novalidate="">
+			<div class="form-group row">
+				<label for="user" class="col-sm-2 col-lg-3 col-form-label">Monto: </label>
+				<div class="col-sm-10 col-lg-9" >
+					<input type="text"  class="form-control" id="user" placeholder="00.00" required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label pt-4">Moneda: </label>
+				<div class="col-sm-10 col-lg-9 pt-4" >
+					<div class="form-group">
+						<select class="custom-select" required>
+							<option value="">Sellecione una opciòn</option>
+							<option value="1">Quetzales</option>
+							<option value="2">Dolares</option>
+						</select>
+						<div class="invalid-feedback">Example invalid custom select feedback</div>
+					</div>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+				</div>
+			</div>
+		</form>
+</div>
+
+<!--CONTENIDO CALCULADORA INVERSIONES-->
+<div class="container p-3" id="cont_3" style="display: none;">
+	<img style="width: 100%; height: auto;" alt="imagenSumma" src="https://eportal.summa.com.gt\Controls\Promo.jpg">
+	<p>contenido 3</p>
 </div>
 </content>
 
@@ -59,17 +98,23 @@
         </button>
       </div>
       <div class="modal-body">
-		<form>
+		<form class="needs-validation was-validated" novalidate="">
 			<div class="form-group row">
 				<label for="user" class="col-sm-2 col-lg-3 col-form-label">Usuario: </label>
-				<div class="col-sm-10 col-lg-9">
-					<input type="text"  class="form-control" id="user" value="fsumma@example.com">
+				<div class="col-sm-10 col-lg-9" >
+					<input type="text"  class="form-control" id="user" value="fsumma@example.com" required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label">Contraseña: </label>
-				<div class="col-sm-10 col-lg-9">
-					<input type="password" class="form-control" id="inputPassword">
+				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label pt-4">Contraseña: </label>
+				<div class="col-sm-10 col-lg-9 pt-4" >
+					<input type="password" class="form-control" id="inputPassword" required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
 				</div>
 			</div>
 		</form>
@@ -95,8 +140,29 @@
 </footer>
 </body>
 
+<script>
+$(document).ready(function(){
+  $("#but1").click(function(){
+    $("#cont_1").show();
+    $("#cont_2").hide();
+    $("#cont_3").hide();
+  });
+  $("#but2").click(function(){
+    $("#cont_1").hide();
+    $("#cont_2").show();
+    $("#cont_3").hide();
+  });
+   $("#but3").click(function(){
+    $("#cont_1").hide();
+    $("#cont_2").hide();
+    $("#cont_3").show();
+  });
+});
+</script>
+
 <!-- SCRIPTS BOOTSTRAP-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </html>
