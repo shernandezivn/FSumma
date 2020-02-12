@@ -54,18 +54,18 @@
 			<div class="form-group row">
 				<label for="user" class="col-sm-2 col-lg-3 col-form-label">Monto: </label>
 				<div class="col-sm-10 col-lg-9" >
-					<input type="text"  class="form-control" id="user" placeholder="00.00" required>
+					<input type="text"  class="form-control" id="user" placeholder="0.00" required>
 					<div class="valid-tooltip">
         				Looks good!
       				</div>
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label pt-4">Moneda: </label>
-				<div class="col-sm-10 col-lg-9 pt-4" >
+				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label">Moneda: </label>
+				<div class="col-sm-10 col-lg-9 ">
 					<div class="form-group">
 						<select class="custom-select" required>
-							<option value="">Sellecione una opciòn</option>
+							<option value="">Selecione una opción</option>
 							<option value="1">Quetzales</option>
 							<option value="2">Dolares</option>
 						</select>
@@ -75,14 +75,96 @@
         				Looks good!
       				</div>
 				</div>
+				<label class="col-sm-2 col-lg-3 col-form-label" for="start">Fecha Emision Factura:</label>
+				<div class="col-sm-10 col-lg-9 col-form-label" >
+					<input type="date" id="start" name="trip-start" value="2020-02-12" min="2018-01-01" max="2021-12-31" class="custom-select">
+				</div>
+
+				<label class="col-sm-2 col-lg-3 col-form-label" for="start">Fecha Pago Factura:</label>
+				<div class="col-sm-10 col-lg-9 col-form-label" >
+					<input type="date" id="start" name="trip-start" value="2020-02-12" min="2018-01-01" max="2021-12-31" class="custom-select">
+				</div>
+
+				<label for="user" class="col-sm-2 col-lg-3 col-form-label">Anticipo: </label>
+				<div class="col-sm-10 col-lg-9" >
+					<input type="text"  class="form-control" id="user" placeholder="0.00" required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+
+      				<button type="button" class="btn btn-primary mt-4" style="background-color: rgb(0, 48, 130);">Aceptar</button>
+      				<button type="button" onClick="window.location.reload();" class="btn btn-primary mt-4" style="background-color: rgb(0, 48, 130);">Limpiar</button>
+				</div>
+
 			</div>
 		</form>
 </div>
 
 <!--CONTENIDO CALCULADORA INVERSIONES-->
 <div class="container p-3" id="cont_3" style="display: none;">
-	<img style="width: 100%; height: auto;" alt="imagenSumma" src="https://eportal.summa.com.gt\Controls\Promo.jpg">
-	<p>contenido 3</p>
+	<form class="needs-validation was-validated" novalidate="">
+			<div class="form-group row">
+				<label for="user2" class="col-sm-2 col-lg-3 col-form-label">Capital: </label>
+				<div class="col-sm-10 col-lg-9" >
+					<input type="text"  class="form-control" id="user2"  required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label">Dias plazo: </label>
+				<div class="col-sm-10 col-lg-9 ">
+					<div class="form-group">
+						<select class="custom-select" required>
+							<option value="" placeholder="Seleccione opción"></option>
+							<option value="1">180</option>
+							<option value="2">210</option>
+							<option value="3">240</option>
+							<option value="4">270</option>
+							<option value="5">300</option>
+							<option value="6">330</option>
+						</select>
+						<div class="invalid-feedback">Seleccione opción</div>
+					</div>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+				</div>
+
+				<label class="col-sm-2 col-lg-3 col-form-label" for="start">Fecha Inversion:</label>
+				<div class="col-sm-10 col-lg-9 col-form-label" >
+					<input type="date" id="start" name="trip-start" value="2020-02-12" min="2018-01-01" max="2021-12-31" class="custom-select">
+				</div>
+
+				<label for="user" class="col-sm-2 col-lg-3 col-form-label">Tasa Interes</label>
+				<div class="col-sm-10 col-lg-9" >
+					<input type="text"  class="form-control" id="user" placeholder="0.5%" required>
+					<div class="valid-tooltip">
+        				Looks good!
+      				</div>
+
+				</div>
+
+				<label for="inputPassword2" class="col-sm-2 col-lg-3 col-form-label pt-4">Tipo Interes </label>
+				<div class="col-sm-10 col-lg-9 pt-sm-2 pt-lg-4">
+					<div class="form-group">
+						<select class="custom-select" required>
+							<option value="" placeholder="Seleccione opción"></option>
+							<option value="1">Mensual</option>
+							<option value="2">Al interes</option>
+						</select>
+						<div class="invalid-feedback">Seleccione opción</div>
+					</div>
+					<div class="valid-tooltip">
+						Looks good!
+						</div>
+
+      				<button type="button" class="btn btn-primary mt-4" style="background-color: rgb(0, 48, 130);">Aceptar</button>
+      				<button type="button" onClick="window.location.reload();" class="btn btn-primary mt-4" style="background-color: rgb(0, 48, 130);">Limpiar</button>
+				</div>
+			</div>
+		</form>
 </div>
 </content>
 
@@ -110,7 +192,7 @@
 			</div>
 			<div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-lg-3 col-form-label pt-4">Contraseña: </label>
-				<div class="col-sm-10 col-lg-9 pt-4" >
+				<div class="col-sm-10 col-lg-9 pt-sm-2 pt-lg-4" >
 					<input type="password" class="form-control" id="inputPassword" required>
 					<div class="valid-tooltip">
         				Looks good!
@@ -140,6 +222,7 @@
 </footer>
 </body>
 
+
 <script>
 $(document).ready(function(){
   $("#but1").click(function(){
@@ -157,6 +240,10 @@ $(document).ready(function(){
     $("#cont_2").hide();
     $("#cont_3").show();
   });
+
+    function refreshPage() {
+        // What do I put here?
+    } 
 });
 </script>
 
